@@ -1,7 +1,10 @@
 /* Dash to Dock */
 
 #dashtodockContainer #dash {
-  background-color: $grey_800;
+  background: transparent;
+  background-image: url("assets/dash/dash-background.svg");
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 #dashtodockContainer:overview #dash {

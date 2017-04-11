@@ -2978,7 +2978,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash to Dock */
 #dashtodockContainer #dash {
-  background-color: #424242;
+  background: transparent;
+  background-image: url("assets/dash/dash-background.svg");
+  background-size: contain;
+  background-repeat: repeat;
 }
 
 #dashtodockContainer:overview #dash {
