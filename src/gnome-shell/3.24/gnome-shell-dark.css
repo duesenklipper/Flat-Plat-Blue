@@ -1006,6 +1006,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* TOP BAR */
 #panel {
   background-color: transparent;
+  /* transition from solid to transparent */
+  transition-duration: 500ms;
   font-weight: bold;
   height: 32px;
 }
@@ -1020,7 +1022,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .panel-corner {
   -panel-corner-radius: 0;
-  -panel-corner-background-color: rgba(0, 0, 0, 0.6);
+  -panel-corner-background-color: transparent;
   -panel-corner-border-width: 2px;
   -panel-corner-border-color: transparent;
 }
@@ -1049,8 +1051,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin-right: 4px;
 }
 
+#panel .panel-button .system-status-icon,
+#panel .panel-button .app-menu-icon > StIcon,
+#panel .panel-button .popup-menu-arrow {
+  icon-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
+}
+
 #panel .panel-button:hover {
   color: #FFFFFF;
+  text-shadow: 0px 0px 8px black;
+}
+
+#panel .panel-button:hover .system-status-icon,
+#panel .panel-button:hover .app-menu-icon > StIcon,
+#panel .panel-button:hover .popup-menu-arrow {
+  icon-shadow: 0px 0px 8px black;
 }
 
 #panel .panel-button:active, #panel .panel-button:overview, #panel .panel-button:focus, #panel .panel-button:checked {
@@ -1095,6 +1110,31 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 #panel .screencast-indicator {
   color: #FF6D00;
+}
+
+#panel.solid {
+  background-color: #424242;
+  /* transition from transparent to solid */
+  transition-duration: 300ms;
+}
+
+#panel.solid .panel-corner {
+  -panel-corner-background-color: black;
+}
+
+#panel.solid .panel-button {
+  color: #ccc;
+  text-shadow: none;
+}
+
+#panel.solid .panel-button:hover {
+  color: white;
+}
+
+#panel.solid .system-status-icon,
+#panel.solid .app-menu-icon > StIcon,
+#panel.solid .popup-menu-arrow {
+  icon-shadow: none;
 }
 
 #calendarArea {
@@ -2799,7 +2839,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.lock-screen {
-  background-color: transparent;
+  background-color: #424242;
 }
 
 .screen-shield-background {

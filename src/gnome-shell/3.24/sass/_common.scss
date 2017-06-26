@@ -1,4 +1,4 @@
-//This is the RIGHT PLACE to edit the stylesheet
+//This\ is the RIGHT PLACE to edit the stylesheet
 
 //let's start by telling people not to edit the generated CSS:
 $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
@@ -835,7 +835,9 @@ StScrollBar {
 /* TOP BAR */
 
 #panel {
-  background-color: $panel_bg_color;
+  background-color: $bg_color_translucent;
+  /* transition from solid to transparent */
+  transition-duration: 500ms;
   font-weight: bold;
   height: $menuitem_size;
 
@@ -852,7 +854,7 @@ StScrollBar {
 
   .panel-corner {
     -panel-corner-radius: $panel-corner-radius;
-    -panel-corner-background-color: $bg_color;
+    -panel-corner-background-color: $bg_color_translucent;
     -panel-corner-border-width: 2px;
     -panel-corner-border-color: transparent;
 
@@ -881,8 +883,21 @@ StScrollBar {
       //dimensions of the icon are hardcoded
     }
 
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9);
+    }
+
     &:hover {
       color: $inverse_fg_color;
+      text-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+
+      .system-status-icon,
+      .app-menu-icon > StIcon,
+      .popup-menu-arrow {
+        icon-shadow: 0px 0px 8px rgba(0, 0, 0, 1);
+      }
     }
 
     &:active, &:overview, &:focus, &:checked {
@@ -915,6 +930,31 @@ StScrollBar {
   }
 
   .screencast-indicator { color: $warning_color; }
+
+  &.solid {
+    background-color: $panel_bg_color;
+    /* transition from transparent to solid */
+    transition-duration: 300ms;
+
+    .panel-corner {
+      -panel-corner-background-color: black;
+    }
+
+    .panel-button {
+      color: #ccc;
+      text-shadow: none;
+
+      &:hover {
+        color: lighten($fg_color, 10%);
+      }
+    }
+
+    .system-status-icon,
+    .app-menu-icon > StIcon,
+    .popup-menu-arrow {
+      icon-shadow: none;
+    }
+  }
 }
 
   // calendar popover
