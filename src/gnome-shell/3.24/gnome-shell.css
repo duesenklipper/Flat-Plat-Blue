@@ -1128,7 +1128,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #panel.solid .panel-button:hover {
-  color: rgba(26, 26, 26, 0.87);
+  color: white;
 }
 
 #panel.solid .system-status-icon,

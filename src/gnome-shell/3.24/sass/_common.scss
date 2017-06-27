@@ -945,7 +945,7 @@ StScrollBar {
       text-shadow: none;
 
       &:hover {
-        color: lighten($fg_color, 10%);
+        color: lighten($inverse_fg_color, 10%);
       }
     }
 
